@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Hybrid Topology</title>
+    <script>
+        function powerAll(on, off, compOff, compOn, wifi, conBtnOn, conBtnOff, lineCon, click){
+            //main power buttons
+            document.getElementById("main-btn-on").style.display = on; document.getElementById("main-btn-off").style.display = off;
+            //ring top computer
+            document.getElementById("empRingTop").style.display = compOff; document.getElementById("onRingTop").style.display = compOn; document.getElementById("wifi1").style.color = wifi;
+            //ring right computer
+            document.getElementById("empRingRight").style.display = compOff; document.getElementById("onRingRight").style.display = compOn; document.getElementById("wifi2").style.color = wifi;
+            //ring bottom computer
+            document.getElementById("empRingBottom").style.display = compOff; document.getElementById("onRingBottom").style.display = compOn; document.getElementById("wifi3").style.color = wifi;
+            //ring left computer
+            document.getElementById("empRingLeft").style.display = compOff; document.getElementById("onRingLeft").style.display = compOn; document.getElementById("wifi4").style.color = wifi;
+            //star top computer
+            document.getElementById("empStar1").style.display = compOff; document.getElementById("onStar1").style.display = compOn; document.getElementById("wifi5").style.color = wifi;
+            //star right computer
+            document.getElementById("empStar2").style.display = compOff; document.getElementById("onStar2").style.display = compOn; document.getElementById("wifi6").style.color = wifi;
+            //star bottom computer
+            document.getElementById("empStar3").style.display = compOff; document.getElementById("onStar3").style.display = compOn; document.getElementById("wifi7").style.color = wifi;
+            //ring con buttons display
+            document.getElementById("ring-btn-on1").style.display = conBtnOn; document.getElementById("ring-btn-on2").style.display = conBtnOn; document.getElementById("ring-btn-on3").style.display = conBtnOn; document.getElementById("ring-btn-on4").style.display = conBtnOn;
+            document.getElementById("ring-btn-off1").style.display = conBtnOff; document.getElementById("ring-btn-off2").style.display = conBtnOff; document.getElementById("ring-btn-off3").style.display = conBtnOff; document.getElementById("ring-btn-off4").style.display = conBtnOff;
+            //buttons clickability
+            document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off3").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            document.getElementById("mid-btn-off").disabled = click; document.getElementById("star-btn-off").disabled = click; document.getElementById("ring-comp-power1").disabled = click;
+            document.getElementById("ring-comp-power2").disabled = click; document.getElementById("ring-comp-power3").disabled = click; document.getElementById("ring-comp-power4").disabled = click;
+            document.getElementById("star-comp-power1").disabled = click; document.getElementById("star-comp-power2").disabled = click; document.getElementById("star-comp-power3").disabled = click;
+            //mid con buttons
+            document.getElementById("mid-btn-on").style.display = conBtnOn; document.getElementById("mid-btn-off").style.display = conBtnOff;
+            //star con buttons
+            document.getElementById("star-btn-on").style.display = conBtnOn; document.getElementById("star-btn-off").style.display = conBtnOff;
+            //line connections
+            document.getElementById("ring-con1").style.borderColor = lineCon; document.getElementById("ring-con2").style.borderColor = lineCon; document.getElementById("ring-con3").style.borderColor = lineCon; document.getElementById("ring-con4").style.borderColor = lineCon;
+            document.getElementById("mid-con").style.borderColor = lineCon; document.getElementById("star-con1").style.borderColor = lineCon; document.getElementById("star-con2").style.borderColor = lineCon;
+        }
+        function RingCon(btn, icon, on, off, line, click) {
+            //ring con failure
+            if(document.getElementById("onRingTop").style.display != "none"){
+                document.getElementById("wifi1").style.color = icon;
+            } else {
+                document.getElementById("wifi1").style.color = 'gray';
+            }
+            if(document.getElementById("onRingRight").style.display != "none"){
+                document.getElementById("wifi2").style.color = icon;
+            } else {
+                document.getElementById("wifi2").style.color = 'gray';
+            }
+            if(document.getElementById("onRingBottom").style.display != "none"){
+                document.getElementById("wifi3").style.color = icon;
+            } else {
+                document.getElementById("wifi3").style.color = 'gray';
+            }
+            if(document.getElementById("onRingLeft").style.display != "none"){
+                document.getElementById("wifi4").style.color = icon;
+            } else {
+                document.getElementById("wifi4").style.color = 'gray';
+            }
+            //ring con buttons display
+            document.getElementById("ring-btn-on1").style.display = on; document.getElementById("ring-btn-on2").style.display = on; document.getElementById("ring-btn-on3").style.display = on; document.getElementById("ring-btn-on4").style.display = on;
+            document.getElementById("ring-btn-off1").style.display = off; document.getElementById("ring-btn-off2").style.display = off; document.getElementById("ring-btn-off3").style.display = off; document.getElementById("ring-btn-off4").style.display = off;
+            document.getElementById("ring-con1").style.borderColor = line; document.getElementById("ring-con2").style.borderColor = line; document.getElementById("ring-con3").style.borderColor = line; document.getElementById("ring-con4").style.borderColor = line;
+            //disable other buttons
+            if(btn === 'on1'){
+                document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off3").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            } else if (btn === 'on2'){
+                document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off3").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            } else if (btn === 'on3'){
+                document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            } else if (btn === 'on4'){
+                document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off3").disabled = click;
+            } else if(btn === 'off1'){
+                document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off3").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            } else if (btn === 'off2'){
+                document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off3").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            } else if (btn === 'off3'){
+                document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off4").disabled = click;
+            } else if (btn === 'off4'){
+                document.getElementById("ring-btn-off1").disabled = click; document.getElementById("ring-btn-off2").disabled = click; document.getElementById("ring-btn-off3").disabled = click;
+            }
+        }
+        function midConclick(color, on, off, starColor) {
+            document.getElementById("mid-con").style.borderColor = color; document.getElementById("mid-btn-on").style.display = on; document.getElementById("mid-btn-off").style.display = off;
+            if(document.getElementById("star-con1").style.borderColor == "red"){
+                if(document.getElementById("onStar1").style.display == "none"){
+                    document.getElementById("wifi5").style.color = "gray";
+                } else {
+                    document.getElementById("wifi5").style.color = "red";
+                }
+            } else {
+                if(document.getElementById("onStar1").style.display == "none"){
+                    document.getElementById("wifi5").style.color = "gray";
+                } else {
+                    document.getElementById("wifi5").style.color = starColor;
+                }
+            }
+            if(document.getElementById("star-con1").style.borderColor == "red"){
+                if(document.getElementById("onStar2").style.display == "none"){
+                    document.getElementById("wifi6").style.color = "gray";
+                } else {
+                    document.getElementById("wifi6").style.color = "red";
+                }
+            } else {
+                if(document.getElementById("onStar2").style.display == "none"){
+                    document.getElementById("wifi6").style.color = "gray";
+                } else {
+                    document.getElementById("wifi6").style.color = starColor;
+                }
+            }
+            if(document.getElementById("star-con1").style.borderColor == "red"){
+                if(document.getElementById("onStar3").style.display == "none"){
+                    document.getElementById("wifi7").style.color = "gray";
+                } else {
+                    document.getElementById("wifi7").style.color = "red";
+                }
+            } else {
+                if(document.getElementById("onStar3").style.display == "none"){
+                    document.getElementById("wifi7").style.color = "gray";
+                } else {
+                    document.getElementById("wifi7").style.color = starColor;
+                }
+            }
+        }
+        function StarCon(on, off, lineColor, midOnColor, midOffColor) {
+            document.getElementById("star-btn-on").style.display = on; document.getElementById("star-btn-off").style.display = off; document.getElementById("star-con1").style.borderColor = lineColor; document.getElementById("star-con2").style.borderColor = lineColor;
+
+            if (document.getElementById("mid-btn-on").style.display == "none"){
+                if(document.getElementById("onStar1").style.display != "none"){
+                    document.getElementById("wifi5").style.color = midOffColor;
+                } else {
+                    document.getElementById("wifi5").style.color = 'gray';
+                }
+                if(document.getElementById("onStar2").style.display != "none"){
+                    document.getElementById("wifi6").style.color = midOffColor;
+                } else {
+                    document.getElementById("wifi6").style.color = 'gray';
+                }
+                if(document.getElementById("onStar3").style.display != "none"){
+                    document.getElementById("wifi7").style.color = midOffColor;
+                } else {
+                    document.getElementById("wifi7").style.color = 'gray';
+                }
+            } else {
+                if(document.getElementById("onStar1").style.display != "none"){
+                    document.getElementById("wifi5").style.color = midOnColor;
+                } else {
+                    document.getElementById("wifi5").style.color = 'gray';
+                }
+                if(document.getElementById("onStar2").style.display != "none"){
+                    document.getElementById("wifi6").style.color = midOnColor;
+                } else {
+                    document.getElementById("wifi6").style.color = 'gray';
+                }
+                if(document.getElementById("onStar3").style.display != "none"){
+                    document.getElementById("wifi7").style.color = midOnColor;
+                } else {
+                    document.getElementById("wifi7").style.color = 'gray';
+                }
+            }
+        }
+        function compPower(comp){
+            if(comp == 1){
+                if(document.getElementById("onRingTop").style.display != "none"){
+                    document.getElementById("onRingTop").style.display = "none"; document.getElementById("empRingTop").style.display = "inline"; document.getElementById("wifi1").style.color = "gray";
+                } else {
+                    document.getElementById("onRingTop").style.display = "inline"; document.getElementById("empRingTop").style.display = "none";
+                    if(document.getElementById("ring-con1").style.borderColor == 'red'){
+                        document.getElementById("wifi1").style.color = "red";
+                    } else {
+                        document.getElementById("wifi1").style.color = "yellow";
+                    }
+                }
+            } else if(comp == 2){
+                if(document.getElementById("onRingRight").style.display != "none"){
+                    document.getElementById("onRingRight").style.display = "none"; document.getElementById("empRingRight").style.display = "inline"; document.getElementById("wifi2").style.color = "gray";
+                } else {
+                    document.getElementById("onRingRight").style.display = "inline"; document.getElementById("empRingRight").style.display = "none";
+                    if(document.getElementById("ring-con1").style.borderColor == 'red'){
+                        document.getElementById("wifi2").style.color = "red";
+                    } else {
+                        document.getElementById("wifi2").style.color = "yellow";
+                    }
+                }
+            } else if(comp == 3){
+                if(document.getElementById("onRingBottom").style.display != "none"){
+                    document.getElementById("onRingBottom").style.display = "none"; document.getElementById("empRingBottom").style.display = "inline"; document.getElementById("wifi3").style.color = "gray";
+                } else {
+                    document.getElementById("onRingBottom").style.display = "inline"; document.getElementById("empRingBottom").style.display = "none";
+                    if(document.getElementById("ring-con1").style.borderColor == 'red'){
+                        document.getElementById("wifi3").style.color = "red";
+                    } else {
+                        document.getElementById("wifi3").style.color = "yellow";
+                    }
+                }
+            } else if(comp == 4){
+                if(document.getElementById("onRingLeft").style.display != "none"){
+                    document.getElementById("onRingLeft").style.display = "none"; document.getElementById("empRingLeft").style.display = "inline"; document.getElementById("wifi4").style.color = "gray";
+                } else {
+                    document.getElementById("onRingLeft").style.display = "inline"; document.getElementById("empRingLeft").style.display = "none";
+                    if(document.getElementById("ring-con1").style.borderColor == 'red'){
+                        document.getElementById("wifi4").style.color = "red";
+                    } else {
+                        document.getElementById("wifi4").style.color = "yellow";
+                    }
+                }
+            } else if(comp == 5){
+                if(document.getElementById("onStar1").style.display != "none"){
+                    document.getElementById("onStar1").style.display = "none"; document.getElementById("empStar1").style.display = "inline"; document.getElementById("wifi5").style.color = "gray";
+                } else {
+                    document.getElementById("onStar1").style.display = "inline"; document.getElementById("empStar1").style.display = "none";
+                    if(document.getElementById("mid-con").style.borderColor == 'red'){
+                        if(document.getElementById("star-con1").style.borderColor == 'red'){
+                            document.getElementById("wifi5").style.color = "red";
+                        } else {
+                            document.getElementById("wifi5").style.color = "orange";
+                        }
+                    } else {
+                        if(document.getElementById("star-con1").style.borderColor == 'red'){
+                            document.getElementById("wifi5").style.color = "red";
+                        } else {
+                            document.getElementById("wifi5").style.color = "yellow";
+                        }
+                    }
+                }
+            } else if(comp == 6){
+                if(document.getElementById("onStar2").style.display != "none"){
+                    document.getElementById("onStar2").style.display = "none"; document.getElementById("empStar2").style.display = "inline"; document.getElementById("wifi6").style.color = "gray";
+                } else {
+                    document.getElementById("onStar2").style.display = "inline"; document.getElementById("empStar2").style.display = "none";
+                    if(document.getElementById("mid-con").style.borderColor == 'red'){
+                        if(document.getElementById("star-con1").style.borderColor == 'red'){
+                            document.getElementById("wifi6").style.color = "red";
+                        } else {
+                            document.getElementById("wifi6").style.color = "orange";
+                        }
+                    } else {
+                        if(document.getElementById("star-con1").style.borderColor == 'red'){
+                            document.getElementById("wifi6").style.color = "red";
+                        } else {
+                            document.getElementById("wifi6").style.color = "yellow";
+                        }
+                    }
+                }
+            } else if(comp == 7){
+                if(document.getElementById("onStar3").style.display != "none"){
+                    document.getElementById("onStar3").style.display = "none"; document.getElementById("empStar3").style.display = "inline"; document.getElementById("wifi7").style.color = "gray";
+                } else {
+                    document.getElementById("onStar3").style.display = "inline"; document.getElementById("empStar3").style.display = "none";
+                    if(document.getElementById("mid-con").style.borderColor == 'red'){
+                        if(document.getElementById("star-con1").style.borderColor == 'red'){
+                            document.getElementById("wifi7").style.color = "red";
+                        } else {
+                            document.getElementById("wifi7").style.color = "orange";
+                        }
+                    } else {
+                        if(document.getElementById("star-con1").style.borderColor == 'red'){
+                            document.getElementById("wifi7").style.color = "red";
+                        } else {
+                            document.getElementById("wifi7").style.color = "yellow";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- MAIN SWITCH -->
+    <div><button id="main-btn-on" onclick="powerAll('none', 'block', 'inline', 'none', 'gray', 'none', 'block', 'gray', true);">ON</button></div>
+    <div><button id="main-btn-off" onclick="powerAll('block', 'none', 'none', 'inline', 'yellow', 'block', 'none', 'rgb(56, 211, 56)', false);">OFF</button></div>
+<!-- RING TOPOLOGY -->
+    <div id="ring-div">
+        <!-- TOP COMP -->
+        <img id="empRingTop" src="images/empty_comp.png" width="160">
+        <img id="onRingTop" src="images/on_comp.png" width="160">
+        <!-- RIGHT COMP -->
+        <img id="empRingRight" src="images/empty_comp.png" width="160">
+        <img id="onRingRight" src="images/on_comp.png" width="160">
+        <!-- BOTTOM COMP -->
+        <img id="empRingBottom" src="images/empty_comp.png" width="160">
+        <img id="onRingBottom" src="images/on_comp.png" width="160">
+        <!-- LEFT COMP -->
+        <img id="empRingLeft" src="images/empty_comp.png" width="160">
+        <img id="onRingLeft" src="images/on_comp.png" width="160">
+
+        <div id="ring-con1"></div>
+        <div id="ring-con2"></div>
+        <div id="ring-con3"></div>
+        <div id="ring-con4"></div>
+
+        <!-- TOP LEFT BUTTON -->
+        <div><button id="ring-btn-on1" onclick="RingCon('on1', 'red', 'none', 'block', 'red', true);">ON</button></div>
+        <div><button id="ring-btn-off1" onclick="RingCon('off1', 'yellow', 'block', 'none', 'rgb(56, 211, 56)', false);">OFF</button></div>
+        <!-- TOP RIGHT BUTTON -->
+        <div><button id="ring-btn-on2" onclick="RingCon('on2', 'red', 'none', 'block', 'red', true);">ON</button></div>
+        <div><button id="ring-btn-off2" onclick="RingCon('off2', 'yellow', 'block', 'none', 'rgb(56, 211, 56)', false);">OFF</button></div>
+        <!-- BOTTOM RIGHT BUTTON -->
+        <div><button id="ring-btn-on3" onclick="RingCon('on3', 'red', 'none', 'block', 'red', true);">ON</button></div>
+        <div><button id="ring-btn-off3" onclick="RingCon('on3', 'yellow', 'block', 'none', 'rgb(56, 211, 56)', false);">OFF</button></div>
+        <!-- BOTTOM LEFT BUTTON -->
+        <div><button id="ring-btn-on4" onclick="RingCon('on4', 'red', 'none', 'block', 'red', true);">ON</button></div>
+        <div><button id="ring-btn-off4" onclick="RingCon('off4', 'yellow', 'block', 'none', 'rgb(56, 211, 56)', false);">OFF</button></div>
+    </div>
+<!-- STAR TOPOLOGY -->
+    <div id="star-div">
+        <!-- middle connection -->
+        <div id="mid-con"></div>
+        <!-- middle button -->
+        <div><button id="mid-btn-on" onclick="midConclick('red', 'none', 'block', 'orange');">ON</button></div>
+        <div><button id="mid-btn-off" onclick="midConclick('rgb(56, 211, 56)', 'block', 'none', 'yellow');">OFF</button></div>
+
+        <img id="empStar1" src="images/empty_comp.png" width="160">
+        <img id="onStar1" src="images/on_comp.png" width="160">
+
+        <img id="empStar2" src="images/empty_comp.png" width="160">
+        <img id="onStar2" src="images/on_comp.png" width="160">
+
+        <img id="empStar3" src="images/empty_comp.png" width="160">
+        <img id="onStar3" src="images/on_comp.png" width="160">
+
+        <div id="star-con1"></div>
+        <div id="star-con2"></div>
+
+        <!-- middle button -->
+        <div><button id="star-btn-on" onclick="StarCon('none', 'block', 'red', 'red', 'red');">ON</button></div>
+        <div><button id="star-btn-off" onclick="StarCon('block', 'none', 'rgb(56, 211, 56)', 'yellow', 'orange');">OFF</button></div>
+    </div>
+
+    <!-- RING WIFI CONN -->
+    <label id="wifi1"><i class="fas fa-wifi"></i></label>
+    <label id="wifi2"><i class="fas fa-wifi"></i></label>
+    <label id="wifi3"><i class="fas fa-wifi"></i></label>
+    <label id="wifi4"><i class="fas fa-wifi"></i></label>
+    <!-- STAR WIFI CONN -->
+    <label id="wifi5"><i class="fas fa-wifi"></i></label>
+    <label id="wifi6"><i class="fas fa-wifi"></i></label>
+    <label id="wifi7"><i class="fas fa-wifi"></i></label>
+
+    <!-- COMPUTER ON/OFF BUTTONS -->
+    <button class="power-btn" id="ring-comp-power1" onclick="compPower(1);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+    <button class="power-btn" id="ring-comp-power2" onclick="compPower(2);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+    <button class="power-btn" id="ring-comp-power3" onclick="compPower(3);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+    <button class="power-btn" id="ring-comp-power4" onclick="compPower(4);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+    <button class="power-btn" id="star-comp-power1" onclick="compPower(5);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+    <button class="power-btn" id="star-comp-power2" onclick="compPower(6);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+    <button class="power-btn" id="star-comp-power3" onclick="compPower(7);"><label style="cursor: pointer;"><i class="fas fa-power-off"></i></label></button>
+
+</body>
+</html>

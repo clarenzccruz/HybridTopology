@@ -1,0 +1,458 @@
+body{
+    background-image: linear-gradient(to right, #cdffd8, #94b9ff);
+}
+
+button{
+    cursor: pointer;
+}
+
+#ring-div{
+    display: inline-block;
+}
+#star-div{
+    display: inline-block;
+    margin-left: 50px;
+}
+/* RING COMPS */
+    #onRingTop{
+        position: relative;
+        left: 270px;
+        top: 50px;
+    }
+    #onRingRight{
+        position: relative;
+        left: 340px;
+        top: 240px;
+    }
+    #onRingBottom{
+        position: relative;
+        left: -55px;
+        top: 440px;
+    }
+    #onRingLeft{
+        position: relative;
+        left: -450px;
+        top: 240px;
+    }
+    #empRingTop{
+        position: relative;
+        left: 270px;
+        top: 50px;
+        display: none;
+    }
+    #empRingRight{
+        position: relative;
+        left: 340px;
+        top: 240px;
+        display: none;
+    }
+    #empRingBottom{
+        position: relative;
+        left: -55px;
+        top: 440px;
+        display: none;
+    }
+    #empRingLeft{
+        position: relative;
+        left: -450px;
+        top: 240px;
+        display: none;
+    }
+
+/* STAR COMPS */
+    #onStar1{
+        position: relative;
+        left: 270px;
+        top: -40px;
+    }
+    #onStar2{
+        position: relative;
+        left: 340px;
+        top: 150px;
+    }
+    #onStar3{
+        position: relative;
+        left: -55px;
+        top: 350px;
+    }
+    #empStar1{
+        position: relative;
+        left: 270px;
+        top: -40px;
+        display: none;
+    }
+    #empStar2{
+        position: relative;
+        left: 340px;
+        top: 150px;
+        display: none;
+    }
+    #empStar3{
+        position: relative;
+        left: -55px;
+        top: 350px;
+        display: none;
+    }
+
+/* RING CONNECTIONS */
+    #ring-con1{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 200px;
+        transform: rotate(-45deg);
+        transform-origin: right;
+        position: relative;
+        left: 80px;
+    }
+    #ring-con2{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 200px;
+        transform: rotate(45deg);
+        transform-origin: right;
+        position: relative;
+        left: 365px;
+        top: 140px;
+    }
+    #ring-con3{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 200px;
+        transform: rotate(-45deg);
+        transform-origin: right;
+        position: relative;
+        left: 365px;
+        top: 220px;
+    }
+    #ring-con4{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 200px;
+        transform: rotate(45deg);
+        transform-origin: right;
+        position: relative;
+        left: 80px;
+        top: 360px;
+    }
+
+/* MIDDLE CONNECTION */
+    #mid-con{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 380px;
+        position: relative;
+        top: 233px;
+        left: -50px;
+    }
+
+/* STAR CONNECTIONS */
+    #star-con1{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 305px;
+        transform: rotate(90deg);
+        transform-origin: right;
+        position: relative;
+        left: 24px;
+        top: 252px;
+    }
+    #star-con2{
+        border-bottom: 3px solid;
+        border-color: rgb(56, 211, 56);
+        width: 180px;
+        position: relative;
+        left: 330px;
+        top: 95px;
+    }
+
+#main-btn-on{
+    width: 100px;
+    height: fit-content;
+    padding: 3px;
+    margin: 10px 10px 0px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+}
+#main-btn-off{
+    width: 100px;
+    height: fit-content;
+    padding: 3px;
+    margin: 10px 10px 0px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border-radius: 15px;
+    display: none;
+}
+
+/* RING BUTTONS */
+    /* TOP LEFT */
+        #ring-btn-on1{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            border-radius: 15px;
+            position: relative;
+            top: 50px;
+            left: 180px;
+        }
+        #ring-btn-off1{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: red;
+            border-radius: 15px;
+            position: relative;
+            top: 50px;
+            left: 180px;
+            display: none;
+        }
+    /* TOP RIGHT */
+        #ring-btn-on2{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            border-radius: 15px;
+            position: relative;
+            top: 23px;
+            left: 460px;
+        }
+        #ring-btn-off2{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: red;
+            border-radius: 15px;
+            position: relative;
+            top: 23px;
+            left: 460px;
+            display: none;
+        }
+    /* BOTTOM RIGHT */
+        #ring-btn-on3{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            border-radius: 15px;
+            position: relative;
+            top: 220px;
+            left: 460px;
+        }
+        #ring-btn-off3{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: red;
+            border-radius: 15px;
+            position: relative;
+            top: 220px;
+            left: 460px;
+            display: none;
+        }
+    /* BOTTOM LEFT */
+        #ring-btn-on4{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            border-radius: 15px;
+            position: relative;
+            top: 200px;
+            left: 185px;
+        }
+        #ring-btn-off4{
+            width: 60px;
+            height: fit-content;
+            padding: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: red;
+            border-radius: 15px;
+            position: relative;
+            top: 200px;
+            left: 185px;
+            display: none;
+        }
+
+/* MIDDLE BUTTONS */
+    #mid-btn-on{
+        width: 60px;
+        height: fit-content;
+        padding: 3px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: green;
+        border-radius: 15px;
+        position: relative;
+        top: 218px;
+        left: 100px;
+    }
+    #mid-btn-off{
+        width: 60px;
+        height: fit-content;
+        padding: 3px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: red;
+        border-radius: 15px;
+        position: relative;
+        top: 218px;
+        left: 100px;
+        display: none;
+    }
+
+/* STAR BUTTON */
+    #star-btn-on{
+        width: 60px;
+        height: fit-content;
+        padding: 3px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: green;
+        border-radius: 15px;
+        position: relative;
+        top: 80px;
+        left: 300px;
+    }
+    #star-btn-off{
+        width: 60px;
+        height: fit-content;
+        padding: 3px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: red;
+        border-radius: 15px;
+        position: relative;
+        top: 80px;
+        left: 300px;
+        display: none;
+    }
+
+/* CONNECTION ICONS */
+    /* RING WIFI CONN */
+        #wifi1{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: -115px;
+            left: -882px;
+        }
+        #wifi2{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: 75px;
+            left: -676px;
+        }
+        #wifi3{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: 278px;
+            left: -938px;
+        }
+        #wifi4{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: 75px;
+            left: -1198px;
+    }
+    /* STAR WIFI CONN */
+        #wifi5{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: -115px;
+            left: -290px;
+        }
+        #wifi6{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: 75px;
+            left: -85px;
+        }
+        #wifi7{
+            font-size: 20px;
+            color: yellow;
+            position: relative;
+            top: 278px;
+            left: -345px;
+        }
+
+/* COMPUTER ON/OFF BUTTONS */
+    /* RING COMPS */
+        .power-btn{
+            padding: 5px;
+            border-radius: 15px;
+            color: red;
+        }
+        #ring-comp-power1{
+            position: relative;
+            top: -87px;
+            left: -1015px;
+        }
+        #ring-comp-power2{
+            position: relative;
+            top: 103px;
+            left: -811px;
+        }
+        #ring-comp-power3{
+            position: relative;
+            top: 304px;
+            left: -1073px;
+        }
+        #ring-comp-power4{
+            position: relative;
+            top: 104px;
+            left: -1334px;
+        }
+        #star-comp-power1{
+            position: relative;
+            top: -118px;
+            left: 1093px;
+        }
+        #star-comp-power2{
+            position: relative;
+            top: 72px;
+            left: 1297px;
+        }
+        #star-comp-power3{
+            position: relative;
+            top: 272px;
+            left: 1035px;
+        }
