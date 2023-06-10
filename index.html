@@ -128,7 +128,10 @@
             }
         }
         function StarCon(on, off, lineColor, midOnColor, midOffColor) {
-            document.getElementById("star-btn-on").style.display = on; document.getElementById("star-btn-off").style.display = off; document.getElementById("star-con1").style.borderColor = lineColor; document.getElementById("star-con2").style.borderColor = lineColor;
+            //star con buttons
+            document.getElementById("star-btn-on").style.display = on; document.getElementById("star-btn-off").style.display = off;
+
+            document.getElementById("star-con1").style.borderColor = lineColor; document.getElementById("star-con2").style.borderColor = lineColor;
 
             if (document.getElementById("mid-btn-on").style.display == "none"){
                 if(document.getElementById("onStar1").style.display != "none"){
